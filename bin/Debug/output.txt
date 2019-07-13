@@ -1,0 +1,49 @@
+001 000000 .2345678901234567890                    
+002 000000 prog     start  0000                                              
+003 000000 mloop    lda    #0                                                
+004 000003          sta    flag                                              
+005 000006          ldx    #0                                                
+006 000009          lds    #0                                                
+007 00000c          ldt    #0                                                
+008 00000f sloop    ldch   arr,x                                             
+009 000012          rmo    a,s                                               
+010 000014          tix    #8                                                
+011 000017          jeq    fin                                               
+012 00001a          ldch   arr,x                                             
+013 00001d          compr  a,s                                               
+014 00001f          jgt    next                                              
+015 000022 next     j      sloop                                             
+016 000025 swap     rmo    a,t                                               
+017 000027          rmo    x,a                                               
+018 000029          sub    #1                                                
+019 00002c          rmo    a,x                                               
+020 00002e          rmo    t,a                                               
+021 000030          stch   arr,x                                             
+022 000033          tix    #8                                                
+023 000036          rmo    s,a                                               
+024 000038          stch   arr,x                                             
+025 00003b          lda    #1                                                
+026 00003b stas     flag                           
+***opcode doesn't exist.***
+027 00003e fin      lda    flag                                              
+028 00003e comp    @#32                            
+***opcode doesn't exist.***
+029 000041          jeq    mloop                                             
+030 000041 .the code ended here but i will print   
+031 000041 .the output to a file to test it        
+032 000044          ldx    #0                                                
+033 000047          lda    #0                                                
+034 00004a loop1    ldch   arr,x                                             
+035 00004a wloop    td      dev04                  
+***opcode doesn't exist.***
+036 00004d          jeq    wloop                                             
+037 00004d wd      dev04                           
+***opcode doesn't exist.***
+038 000050          tix    #8                                                
+039 000053          jeq    fin2                                              
+040 000056          j      loop1                                             
+041 000059 fin2     j      *                                                 
+042 00005c arr      byte   c'efacbdhg'                                       
+043 000064 flag     word   #0                                                
+044 000067 dev04    byte   x'04'                                             
+045 000068          end                                                      

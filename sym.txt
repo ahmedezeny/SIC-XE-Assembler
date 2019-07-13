@@ -1,0 +1,12 @@
+000067 dev04   
+000064 flag    
+000022 next    
+00000f sloop   
+000000 mloop   
+00004a loop1   
+000059 fin2    
+000000 prog    
+000025 swap    
+00004a wloop   
+00005c arr     
+00003e fin     

@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1556308512 source:c:\users\lenovo\documents\c++\assembly\main.cpp
+	<iostream>
+	<fstream>
+	<queue>
+	<regex>
+	<unordered_map>
+	<string>
+	<bits/stdc++.h>
+	<algorithm>
+	<utility>
+
